@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+*{margin:0;padding:0;}
+body{font:14px Microsoft YaHei;color:#000;}
+ul{list-style:none;}
+a{text-decoration:none;}
+.clearfix:after{content:"";display:block;clear:both;}
+
+.part2{
+    width:100%;
+    background:#fff;
+}
+
+/*common style*/
+.con{width:100%;padding:20px;}
+.con .tit{width:100%;height:40px;text-align:center;font:bold 25px Microsoft YaHei;}
+
+/*pro1 随机碎片化*/
+    .pro1 #wrap{position:relative;width:400px;height:400px;margin:auto;overflow:hidden;}
+    .pro1 #wrap .box{position:absolute;width:100%;height:100%;}
+    .pro1 #wrap .box li{display:none;position:absolute;left:0;top:0;}
+    .pro1 #wrap .box li img{display:block;width:400px;height:400px;overflow:hidden;}
+    .pro1 #wrap .box li.on{display:block;}
+    .pro1 #wrap .mask{position:absolute;top:0;left:0;width:400px;height:400px;}
+    .pro1 #wrap .mask p{float:left;}
+    .pro1 #wrap .tab{position:absolute;left:50%;margin-left:-80px;bottom:20px;width:160px;height:25px;}
+    .pro1 #wrap .tab span{display:inline-block;width:25px;height:25px;margin:0 5px;background-color:rgba(0,0,0,0.4);line-height:25px;text-align:center;color:#fff;cursor:pointer;border-radius:50%;}
+    .pro1 #wrap .tab span.on{background-color:#f60;color:#000;}
+    .pro1 #wrap b{position:absolute;width:30px;height:30px;background:#fff;top:50%;margin-top:-15px;line-height:30px;text-align:center;cursor:pointer;}
+    .pro1 #wrap b.prev{left:0;}
+    .pro1 #wrap b.next{right:0;}
+    .pro1 #wrap b:hover{background:rgba(0,0,0,.3);}
+
+/*pro2 回形运动*/
+    .pro2 #wrap{position:relative;width:658px;height:411px;margin:auto;overflow:hidden;}
+    .pro2 #wrap .box{position:absolute;}
+    .pro2 #wrap .box li{display:none;}
+    .pro2 #wrap .box li img{display:block;width:658px;height:411px;}
+    .pro2 #wrap .box li.on{display:block;}
+    .pro2 #wrap .mask{position:absolute;left:0;top:0;width:658px;height:411px;}
+    .pro2 #wrap .mask p{float:left;}
+    .pro2 #wrap .tab{position:absolute;left:50%;margin-left:-80px;bottom:20px;width:160px;height:25px;}
+    .pro2 #wrap .tab span{display:inline-block;width:25px;height:25px;margin:0 5px;background-color:rgba(0,0,0,0.4);line-height:25px;text-align:center;color:#fff;cursor:pointer;border-radius:50%;}
+    .pro2 #wrap .tab span.on{background-color:#f60;color:#000;}
+    .pro2 #wrap b{position:absolute;width:30px;height:30px;background:#fff;top:50%;margin-top:-15px;line-height:30px;text-align:center;cursor:pointer;}
+    .pro2 #wrap b.prev{left:0;}
+    .pro2 #wrap b.next{right:0;}
+    .pro2 #wrap b:hover{background:rgba(0,0,0,.3);}
+
+/*pro3 上下折叠菜单*/
+    .pro3 .tip{width:250px;margin:5px auto 0;}
+    .pro3 #wrap{width:250px;margin:auto;cursor:pointer;
+                perspective: 800px; /*视距*/
+    }
+    .pro3 #wrap h3{width:100%;height:41px;line-height:41px;background:#DBE618;text-align:center;position:relative;z-index:10;}
+    .pro3 #wrap div{width:100%;line-height:40px;text-align:center;
+                transform-origin:top;/*以顶部为旋转中心*/
+                transform-style: preserve-3d; /*打造3D环境*/
+                transform:rotateX(-120deg);
+    }
+    .pro3 #wrap div.down{animation:oDown 1s ease forwards;}/*这里的forwards可以换成both*/
+        @keyframes oDown{
+            0%{transform:rotateX(-120deg);}
+            25%{transform:rotateX(80deg);}
+            50%{transform:rotateX(-60deg);}
+            75%{transform:rotateX(40deg);}
+            100%{transform:rotateX(0deg);}
+    }
+    .pro3 #wrap div.up{animation:oUp 1s ease forwards;}/*这里的forwards可以换成both*/
+        @keyframes oUp{
+            0%{transform:rotateX(0deg);}
+            25%{transform:rotateX(40deg);}
+            50%{transform:rotateX(-60deg);}
+            75%{transform:rotateX(80deg);}
+            100%{transform:rotateX(-120deg);}
+    }
+    .pro3 #wrap div p{width:100%;line-height:40px;background:#EB6113;margin-bottom:1px;}
+
+/*pro4 弹性运动*/
+    .pro4 #wrap{position:relative;width:980px;;margin:auto;box-shadow:0 0 10px 1px #ddd;overflow:hidden;}
+    .pro4 #wrap ul{width:100%;height:180px;}
+    .pro4 #wrap ul li{position:absolute;width:130px;height:180px;}
+    .pro4 #wrap ul li img{display:block;}
+    .pro4 #wrap ul li span{display:block;width:100%;height:50px;line-height:50px;text-align:center;}
+    .pro4 #wrap .nav{width:100%;height:30px;background:url('../images/4-nav_bg.png') no-repeat;}
+    .pro4 #wrap .nav span{position:absolute;left:415px;width:13px;height:8px;background:url('../images/4-caret_active.png') no-repeat;}
+    .pro4 #wrap .nav .tab{position:absolute;left:350px;margin-top:8px;}
+    .pro4 #wrap .nav .tab b{display:inline-block;width:140px;height:20px;line-height:20px;text-align:center;cursor:pointer;font-weight:none;}
+    .pro4 #wrap .nav b.on{color:#000;font-weight:bold;}
+
+/*pro5 桌面系统-选中拖拽排序*/
+    .pro5{width:100%;height:500px;padding:0;position:relative;}
+    .pro5 ul{position:relative;width:100%;height:100%;background:#000;}
+    .pro5 ul li{position:absolute;top:0;left:0;width:55px;height:75px;padding:10px 20px;border-radius:10px; }
+    .pro5 ul li span{position:absolute;left:0;bottom:4px;line-height:20px;width:100%;height:20px;text-align:center;color:#fff;}
+    .pro5 ul li:hover{background:rgba(255,255,255,0.2);}
+    .pro5 #all{position:absolute;border:1px dotted rgba(255,255,255,0.4);}
+    .pro5 ul li.on{background:rgba(255,255,255,0.2);}
